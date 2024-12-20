@@ -6,7 +6,18 @@ A SDK from ChainFace making it easy for developers to interact with ChainFace's 
 ### Quickstart
 
 ```go
-	client, err := client.DialContext(context.Background(), "wss://remote_address")
+package main
+
+import (
+	"context"
+	"fmt"
+
+	"github.com/chainfacedev/chainface-sdk/client"
+	"github.com/chainfacedev/chainface-sdk/types"
+)
+
+func main() {
+	client, err := client.DialContext(context.Background(), "ws://remote_address")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -28,4 +39,6 @@ A SDK from ChainFace making it easy for developers to interact with ChainFace's 
 			fmt.Println(vLog)
 		}
 	}
+}
+
 ```
